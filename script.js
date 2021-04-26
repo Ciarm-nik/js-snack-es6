@@ -47,8 +47,8 @@ for (var i = 0; i < bici.length; i++) {
 
 // Utilizzo destructuring per stampare le bici più piccole
 
-const [, bici2, , bici4, bici5 ] = bici
-console.log (bici2, bici4, bici5)
+const [, bici2, , bici4, bici5] = bici
+console.log(bici2, bici4, bici5)
 
 
 // Stampo il numero delle bici piccole e quelle grandi con template literal
@@ -56,22 +56,42 @@ console.log(`${biciSmall.length} Questo è il numero delle bici piccole`);
 console.log(`${biciLarge.length} Questo è il numero delle bici grandi`);
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // Snack2
 // Creare un array di oggetti di squadre di calcio. Ogni squadra avrà diverse proprietà: nome, punti fatti, falli subiti. Nome sarà l’unica proprietà da compilare, le altre saranno tutte settate a 0. Generare numeri random al posto degli 0 nelle proprietà: Punti fatti e falli subiti.
 // Infine usando la destrutturazione creiamo un nuovo array i cui elementi contengono solo nomi e falli subiti e stampiamo tutto in console.
+
+
+const squadre = [
+    {
+        nome: "inter",
+        puntiFatti: genNumeriCasuali(1, 100),
+        falliSubiti: genNumeriCasuali(1, 100),
+    }, {
+        nome: "napoli",
+        puntiFatti: genNumeriCasuali(1, 100),
+        falliSubiti: genNumeriCasuali(1, 100),
+    }, {
+        nome: "roma",
+        puntiFatti: genNumeriCasuali(1, 100),
+        falliSubiti: genNumeriCasuali(1, 100),
+    }
+]
+
+
+console.log(squadre);
+
+const squadra = {
+    nome: "Inter",
+    puntiFatti: genNumeriCasuali(1, 100),
+    falliSubiti: genNumeriCasuali(1, 100),
+};
+
+const {nome, falliSubiti} = squadra
+console.log(squadra)
+console.log("Nome della squadra: " + nome + "." + " I falli subiti sono " + falliSubiti)
+
+
+
+function genNumeriCasuali(min, max) {
+    return Math.floor(Math.random() * (max - min)) + min;
+}
