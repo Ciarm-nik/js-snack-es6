@@ -29,34 +29,12 @@ const bici = [
 ]
 
 
+// Utilizzo il sort per trovare la bici con il peso minore
+bici.sort(function (a, b) {
+    return a.peso - b.peso;
+  });
 
-
-// Creo un ciclo for per stabilire le bici più piccole (<30)
-// var biciSmall = [];
-// var biciLarge = [];
-
-
-// for (var i = 0; i < bici.length; i++) {
-//     var biciLeggere = bici[i];
-
-
-//     if (biciLeggere.peso < 30) {
-//         biciSmall.push(biciLeggere);
-//     } else {
-//         biciLarge.push(biciLeggere)
-//     }
-
-// }
-
-// Utilizzo destructuring per stampare le bici più piccole
-
-// const [, bici2, , bici4, bici5] = bici
-// console.log(bici2, bici4, bici5)
-
-
-// Stampo il numero delle bici piccole e quelle grandi con template literal
-// console.log(`${biciSmall.length} Questo è il numero delle bici piccole`);
-// console.log(`${biciLarge.length} Questo è il numero delle bici grandi`);
+  console.log (bici[0])
 
 
 // Snack2
