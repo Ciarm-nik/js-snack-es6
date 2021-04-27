@@ -28,32 +28,35 @@ const bici = [
     }
 ]
 
+
+
+
 // Creo un ciclo for per stabilire le bici più piccole (<30)
-var biciSmall = [];
-var biciLarge = [];
+// var biciSmall = [];
+// var biciLarge = [];
 
 
-for (var i = 0; i < bici.length; i++) {
-    var biciLeggere = bici[i];
+// for (var i = 0; i < bici.length; i++) {
+//     var biciLeggere = bici[i];
 
 
-    if (biciLeggere.peso < 30) {
-        biciSmall.push(biciLeggere);
-    } else {
-        biciLarge.push(biciLeggere)
-    }
+//     if (biciLeggere.peso < 30) {
+//         biciSmall.push(biciLeggere);
+//     } else {
+//         biciLarge.push(biciLeggere)
+//     }
 
-}
+// }
 
 // Utilizzo destructuring per stampare le bici più piccole
 
-const [, bici2, , bici4, bici5] = bici
-console.log(bici2, bici4, bici5)
+// const [, bici2, , bici4, bici5] = bici
+// console.log(bici2, bici4, bici5)
 
 
 // Stampo il numero delle bici piccole e quelle grandi con template literal
-console.log(`${biciSmall.length} Questo è il numero delle bici piccole`);
-console.log(`${biciLarge.length} Questo è il numero delle bici grandi`);
+// console.log(`${biciSmall.length} Questo è il numero delle bici piccole`);
+// console.log(`${biciLarge.length} Questo è il numero delle bici grandi`);
 
 
 // Snack2
@@ -78,18 +81,15 @@ const squadre = [
 ]
 
 
-console.log(squadre);
+// Uso map per selezionare solo il nome e i falli subiti senza includere i punti fatti
+const newTeams = squadre.map((element) => {
+    return {
+        nome: element.nome,
+        falliSubiti: element.falliSubiti
+    }
+})
 
-const squadra = {
-    nome: "Inter",
-    puntiFatti: genNumeriCasuali(1, 100),
-    falliSubiti: genNumeriCasuali(1, 100),
-};
-
-const {nome, falliSubiti} = squadra
-console.log(squadra)
-console.log("Nome della squadra: " + nome + "." + " I falli subiti sono " + falliSubiti)
-
+console.log(newTeams)
 
 
 function genNumeriCasuali(min, max) {
